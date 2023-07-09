@@ -16,7 +16,7 @@ public class CollectableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isCollect = true )
+        if (isCollect == true )
         {
             if (transform.parent != null)
             {
@@ -30,6 +30,7 @@ public class CollectableObject : MonoBehaviour
     {
         if(other.gameObject.tag == "Obstacle")
         {
+          
             collecter.DecreaseVertical();
             transform.parent = null;
             GetComponent<BoxCollider>().enabled = false;

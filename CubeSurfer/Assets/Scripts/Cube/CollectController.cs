@@ -10,6 +10,9 @@ public class CollectController : MonoBehaviour
     void Start()
     {
         mainCube = GameObject.Find("MainCube");
+       
+        vertical = mainCube.transform.position.y+1;
+        
     }
 
     // Update is called once per frame
@@ -32,11 +35,16 @@ public class CollectController : MonoBehaviour
     {
         if (other.gameObject.tag == "Collectable" && other.gameObject.GetComponent<CollectableObject>().GetIsCollect() == false)
         {
+            
             vertical += 1f;
             other.gameObject.GetComponent<CollectableObject>().DoCollect();
             other.gameObject.GetComponent<CollectableObject>().SetIndex(vertical);
             other.gameObject.transform.parent = mainCube.transform;
-
+           
         }
     }
+
+   
+
+
 }
